@@ -1,0 +1,787 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: rgb(255, 255, 255);
+    --second-bg-color: rgb(255, 255, 255);
+    --text-color: rgb(0, 0, 0);
+    --main-color: rgba(247, 0, 0, 0.861);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 10;
+    width: 100%;
+    padding: 20px 9%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .3s;
+    position: relative;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 0;
+    height: 2px;
+    background-color: rgb(236, 231, 231);
+    visibility: hidden;
+    transition: 0.4s ease-in-out;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+    visibility: visible;
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 45px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    background: linear-gradient(white, white, rgba(244, 214, 214, 0.466), red);
+}
+
+.home-content {
+    max-width: none;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+.home-content .text-animasi {
+    position: relative;
+    width: 32.8rem;
+}
+
+.home-content .text-animasi h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 0.9px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0% 100%;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 3s;
+    position: relative;
+    display: inline-block;
+}
+
+.home-content .text-animasi h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: 1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 3s;
+}
+
+.home-content p {
+    font-size: 20px;
+    margin: 2rem 0 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.9s;
+}
+
+.home-img {
+    border-radius: 0;
+    opacity: 0;
+    animation: slideInRight 2s ease forwards 1.5s;
+}
+
+.home-img img {
+    position: static;
+    width: 28vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid black;
+}
+
+.home-imghover {
+    position: absolute;
+    top: 10;
+    right: 130px;
+    width: 30%;
+    height: 57%;
+    background: transparent;
+    transition: 3s ease-in-out;
+    border-radius: 30%;
+}
+
+.home-imghover:hover {
+    background: rgba(255, 255, 255, 0.718);
+    opacity: .5;
+}
+
+
+
+
+
+
+
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--second-bg-color);
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 90%;
+    text-align: center;
+}
+
+.about .heading span {
+    color: red;
+    font-size: 70px;
+}
+
+.about-content {
+    text-align: center;
+    position: static;
+}
+
+.about-content p {
+    font-size: 20px;
+    margin-top: -88%;
+    font-display: block;
+}
+
+.pendidikan {
+    display: flex;
+    margin-top: -80%;
+    min-height: auto;
+    padding-bottom: 5rem;
+    flex-direction: column;
+    width: 70%;
+}
+
+.pendidikan .pendidikan-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.pendidikan-row .pendidikan-column {
+    flex: 1 1 40rem;
+}
+
+.pendidikan-column .title {
+    font-size: 40px;
+    margin: 60px -2rem 1.5rem;
+}
+
+.pendidikan-column .pendidikan-box {
+    border-left: 3px solid rgb(219, 219, 219);
+}
+
+.pendidikan-box .pendidikan-content {
+    position: static;
+    padding: 1.4rem;
+}
+
+.pendidikan-content .content {
+    position: static;
+    padding: 1.5rem;
+    border: 3px solid rgb(219, 219, 219);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.44);
+}
+
+.pendidikan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* Container untuk logo */
+.logo-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gaya untuk gambar logo */
+.unesa-img img,
+.school-img img {
+    width: 80px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 1px;
+}
+
+.pendidikan-content .content .year {
+    font-size: 12px;
+    color: rgba(110, 110, 110, 0.415);
+    padding-bottom: 1px;
+}
+
+.pendidikan-content .content h3 {
+    font-size: 20px;
+    margin-bottom: 1px;
+    color: rgb(69, 69, 69);
+}
+
+.pendidikan-content p {
+    font-size: 16px;
+    font-family: sans-serif;
+    color: oklch(56.959% 0.00158 285.74);
+}
+
+
+.pengalaman {
+    display: flex;
+    min-height: auto;
+    padding-bottom: 5rem;
+    flex-direction: column;
+    width: 70%;
+}
+
+.pengalaman .pengalaman-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.pengalaman-row .pengalaman-column {
+    flex: 1 1 40rem;
+}
+
+.pengalaman-column .title {
+    font-size: 40px;
+    margin: 60px -2rem 1.5rem;
+}
+
+.pengalaman-column .pengalaman-box {
+    border-left: 3px solid rgb(219, 219, 219);
+}
+
+.pengalaman-box .pengalaman-content {
+    position: static;
+    padding: 1.4rem;
+}
+
+.pengalaman-content .content {
+    position: static;
+    padding: 1.5rem;
+    border: 3px solid rgb(219, 219, 219);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.44);
+}
+
+.pengalaman-content li {
+    font-size: 15px;
+}
+
+.pengalaman-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.logo-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school-img img {
+    width: 80px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 1px;
+}
+
+.pengalaman-content .content .year {
+    font-size: 12px;
+    color: rgba(110, 110, 110, 0.415);
+    padding-bottom: 1px;
+}
+
+.pengalaman-content .content h3 {
+    font-size: 20px;
+    margin-bottom: 1px;
+    color: rgb(69, 69, 69);
+}
+
+.pengalaman-content p {
+    font-size: 16px;
+    font-family: sans-serif;
+    color: oklch(56.959% 0.00158 285.74);
+}
+
+
+
+
+
+
+.skill {
+    font-size: 40px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1000px;
+}
+
+.skill-box {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(171, 171, 171);
+    border-radius: 12px;
+    padding: 15px 30px;
+    color: rgb(13, 13, 13);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgb(171, 171, 171);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.skill-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgb(60, 157, 255), 0 0 30px rgb(55, 125, 255);
+}
+
+
+
+
+
+
+.proyek {
+    padding-block: 50px;
+    background-color: var(--second-bg-color);
+    padding-top: 8rem;
+}
+
+.proyek .content {
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: slideInRight 2s ease forwards 1.5s;
+}
+
+.heading-proyek {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    margin-top: 20px;
+}
+
+.proyek .content p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.proyek-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin: 50px auto 0;
+    opacity: 0;
+    animation: slideInRight 2s ease forwards 1.5s;
+
+}
+
+.proyek-box .box {
+    padding: 20px;
+    box-shadow: 5px 5px 20px rgba(238, 0, 0, 0.121);
+    border-radius: 10px;
+    background: white;
+}
+
+.proyek-box .box img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyek-box .proyek-desc {
+    margin-top: 20px;
+}
+
+.proyek-box .proyek-desc p {
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+}
+
+.proyek-box .proyek-desc .proyek-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proyek-box .proyek-desc .proyek-btn a {
+    background-color: blue;
+    padding: 10px 20px;
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.proyek-box .proyek-desc .proyek-btn a:hover {
+    background-color: var(--main-color);
+}
+
+
+
+
+
+
+.kartu {
+    max-width: 100%;
+    margin: 40px;
+    padding: 20px;
+    margin-top: 12%;
+}
+
+.header-kontak {
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.9s;
+}
+
+.header-kontak h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--main-color);
+    text-shadow: 0 0 10px rgba(71, 71, 71, 0.493);
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+.header-kontak p {
+    font-size: 20px;
+    color: #201f1f;
+    max-width: 50%px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: slideInRight 4s ease forwards 2s;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(52, 109, 255, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(225, 177, 242, 0.2);
+}
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #520d6b;
+    text-shadow: 0 0 8px rgba(229, 138, 138, 0.7);
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1a1919;
+}
+
+.card-content {
+    font-size: 12px;
+    color: #ffffff;
+    word-break: break-all;
+}
+
+.background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.line {
+    position: absolute;
+    background: linear-gradient(to right, transparent, rgba(187, 0, 255, 0.3), transparent);
+    height: 1px;
+    transform-origin: center;
+}
+
+.code-element {
+    position: absolute;
+    color: rgba(187, 0, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        background: var(--second-bg-color);
+    }
+
+    #menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        z-index: 1000;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 100%;
+        width: 40%;
+        height: 100vh;
+        background: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.1s;
+        z-index: 999;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 20px 15px;
+        font-size: 24px;
+        color: rgb(255, 255, 255);
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 12rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content .text-animasi h3 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .home-content .text-animasi {
+        position: relative;
+        width: 70.8rem;
+    }
+
+    .home-img img {
+        width: 40vw;
+    }
+
+    .home-imghover {
+        position: absolute;
+        top: 48%;
+        right: 30%;
+        width: 40%;
+        height: 40%;
+        background: transparent;
+        transition: 3s ease-in-out;
+        border-radius: 30%;
+    }
+
+    .pendidikan-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+
+    .unesa-img img,
+    .school-img img {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .pendidikan-column .title {
+        margin-bottom: 5%;
+        margin-top: 40%;
+    }
+
+    .heading,
+    .heading-proyek {
+        font-size: 3.5rem;
+    }
+
+    .proyek-box {
+        grid-template-columns: 1fr;
+    }
+
+    .kartu {
+        padding: 10px;
+    }
+
+    .header-kontak h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@keyframes homeBgText {
+
+    0%,
+    10% {
+        background-size: 0% 100%;
+    }
+
+    70%,
+    90% {
+        background-size: 100% 100%;
+    }
+
+    100% {
+        background-size: -100%;
+    }
+}
+
+@keyframes homeCursorText {
+
+    0%,
+    10% {
+        width: 0;
+        opacity: 1;
+    }
+
+    70% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    71%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
